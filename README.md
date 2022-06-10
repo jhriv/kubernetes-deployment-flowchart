@@ -13,7 +13,7 @@ flowchart TD
   GHE --> |YES| LGH(run local git hooks)
   GHE --> |NO| PC["push commit(s)"]
   LGH --> GHP{is the status of local git hooks passing?}
-  GHP --> |YES| PC["push commit(s)"]
+  GHP --> |YES| PC
   GHP --> |NO| MWR{is more work required?}
   MWR --> |YES| LC
   MWR --> |NO| DBr[delete branch]
