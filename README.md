@@ -12,7 +12,7 @@ flowchart TD
   CC --> GHE{is running local git hooks required?}
   GHE --> |YES| LGH(run local git hooks)
   GHE --> |NO| PC["push commit(s)"]
-  LGH --> GHP{do local git hooks pass?}
+  LGH --> GHP{is the status of local git hooks passing?}
   GHP --> |YES| PC["push commit(s)"]
   GHP --> |NO| MWR{is more work required?}
   MWR --> |YES| LC
