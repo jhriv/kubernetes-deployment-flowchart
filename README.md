@@ -28,11 +28,15 @@ flowchart TD
   PM --> PH
   PH --> RC[run chart with selected environment]
   RC --> KM[[KUBERNETES MAGIC]]
-  KM --> MM{is merge to main?}
+  KM --> MM{is environment set to production?}
   MM --> |YES| H
   MM --> |NO| CR[is commit ready for mergin to main?]
   CR --> |YES| PR[create pull request for merge to main]
   CR --> |NO| MWR
+  PR --> PRA{is pull request approved?}
+  PRA --> |YES| PE[set environment to production]
+  PRA --> |NO| MRW
+  PE --> PH
 ```
 
 - local coding
