@@ -11,7 +11,7 @@ flowchart TD
   GHP ---> |NO| PC[push commits]
   MWR --> |YES| LC
   MWR --> |NO| DB[delete branch]
-  DB --> H(HALT)
+  DB --> H((HALT))
 ```
 
 - local coding
