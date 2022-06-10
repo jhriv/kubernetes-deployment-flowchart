@@ -33,6 +33,7 @@ flowchart TD
   PM --> PH
   PH --> RC[run chart with selected environment]
   RC --> KM[[KUBERNETES MAGIC]]
+  style KM fill:#5FB3CE color:#2F7F98
   KM --> MM{is environment set to production?}
   MM --> |YES| H
   MM --> |NO| CR{is commit ready for mergin to main?}
