@@ -3,8 +3,17 @@
 A flow chart outlining Kubernetes deployment for UCLA Library
 
 ```mermaid
-
+flowchart TD
+  LC(local coding) --> CC(code commit)
+  CC --> LGH(local git hoks)
+  LGH --> GHP{do local git hooks pass?}
+  GHP --> |YES| MWR[is more work required?]
+  GHP ---> |NO| PC[push commits]
+  MWR --> |YES| LC
+  MWR --> |NO| DB[delete branch]
+  DB --> H(HALT)
 ```
+
 - local coding
 
 - code commit
