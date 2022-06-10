@@ -6,9 +6,9 @@ A flow chart outlining Kubernetes deployment for UCLA Library
 flowchart TD
   classDef terminator fill:#add8e6;
   classDef magic fill:#B4CE5F;
-  S((START)) --> LC(local coding)
+  S((START)) --> LC("create / edit source code")
   class S terminator;
-  LC --> CC(code commit)
+  LC --> CC(commit code changes)
   CC --> GHE{is running local git hooks required?}
   GHE --> |YES| LGH(run local git hooks)
   GHE --> |NO| PC["push commit(s)"]
