@@ -27,7 +27,7 @@ flowchart TD
   RC["run chart(s) with selected environment"]
   KM[[KUBERNETES MAGIC]]
   MM{is environment set to production?}
-  CR{is commit ready for mergin to main?}
+  CR{is commit ready for merge into main?}
   PR[create pull request for merge to main]
   PRA{is pull request approved?}
   MPR[merge pull request]
