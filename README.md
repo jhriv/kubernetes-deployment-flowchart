@@ -4,9 +4,10 @@ A flow chart outlining Kubernetes deployment for UCLA Library
 
 ```mermaid
 flowchart TD
+  classDef terminator fill:#add8e6;
+  classDef magic fill:#5FB3CE,color:#2F7F98;
   S((START)) --> LC(local coding)
-  style S fill:#add8e6
-  style H fill:#add8e6
+  class S terminator;
   LC --> CC(code commit)
   CC --> GHE{is running local git hooks required?}
   GHE --> |YES| LGH(run local git hooks)
@@ -17,6 +18,7 @@ flowchart TD
   MWR --> |YES| LC
   MWR --> |NO| DBr[delete branch]
   DBr --> H((HALT))
+  class H terminator;
   PC --> RT[run tests]
   RT --> TSP{is test suite passing?}
   TSP --> |YES| DB{is development branch?}
@@ -33,7 +35,7 @@ flowchart TD
   PM --> PH
   PH --> RC[run chart with selected environment]
   RC --> KM[[KUBERNETES MAGIC]]
-  style KM fill:#5FB3CE color:#2F7F98
+  class KM magic;
   KM --> MM{is environment set to production?}
   MM --> |YES| H
   MM --> |NO| CR{is commit ready for mergin to main?}
