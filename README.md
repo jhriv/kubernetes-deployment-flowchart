@@ -11,6 +11,7 @@ flowchart TD
   LGH(run local git hooks)
   PC["push commit(s)"]
   GHP{is the status of local git hooks passing?}
+  MR{is the commit ready for review?}
   MWR{is more work required?}
   DBr[delete branch]
   RT[run tests]
@@ -37,10 +38,12 @@ flowchart TD
   LC --> CC
   CC --> GHE
   GHE --> |YES| LGH
-  GHE --> |NO| PC
+  GHE --> |NO| MR
   LGH --> GHP
-  GHP --> |YES| PC
+  GHP --> |YES| MR
   GHP --> |NO| MWR
+  MR --> |YES| PC
+  MR --> |NO| MWR
   MWR --> |YES| LC
   MWR --> |NO| DBr
   DBr --> H
