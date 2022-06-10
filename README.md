@@ -35,7 +35,7 @@ flowchart TD
   CR --> |NO| MWR
   PR --> PRA{is pull request approved?}
   PRA --> |YES| PE[set environment to production]
-  PRA --> |NO| MRW
+  PRA --> |NO| MWR
   PE --> PH
 ```
 
