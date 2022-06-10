@@ -30,10 +30,10 @@ flowchart TD
   DE --> HC{"is commit affecting helm chart(s)?"}
   TE --> HC
   SE ---> HC
-  HC --> |YES| PM[push to museum]
-  HC --> |NO| PH[pull current helm chart from museum]
+  HC --> |YES| PM["deploy helm chart(s) to museum"]
+  HC --> |NO| PH["pull current helm chart(s) from museum"]
   PM --> PH
-  PH --> RC[run chart with selected environment]
+  PH --> RC["run chart(s) with selected environment"]
   RC --> KM[[KUBERNETES MAGIC]]
   class KM magic;
   KM --> MM{is environment set to production?}
