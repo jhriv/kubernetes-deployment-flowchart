@@ -42,7 +42,8 @@ flowchart TD
   CR --> |YES| PR[create pull request for merge to main]
   CR --> |NO| MWR
   PR --> PRA{is pull request approved?}
-  PRA --> |YES| PE[set environment to production]
+  PRA --> |YES| MPR[merge pull request]
+  MPR --> PE[set environment to production]
   PRA --> |NO| MWR
   PE --> PH
 ```
