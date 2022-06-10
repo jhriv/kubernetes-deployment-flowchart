@@ -4,7 +4,8 @@ A flow chart outlining Kubernetes deployment for UCLA Library
 
 ```mermaid
 flowchart TD
-  LC(local coding) --> CC(code commit)
+  S((START)) --> LC(local coding)
+  LC --> CC(code commit)
   CC --> GHE{is running local git hooks required?}
   GHE --> |YES| LGH(run local git hooks)
   GHE --> |NO| PC["push commit(s)"]
