@@ -8,11 +8,31 @@ flowchart TD
   CC --> LGH(local git hoks)
   LGH --> GHP{do local git hooks pass?}
   GHP --> |YES| MWR[is more work required?]
-  GHP --> |NO| PC[push commits]
+  GHP --> |NO| PC["push commit(s)"]
   MWR --> |YES| LC
-  MWR --> |NO| DB[delete branch]
-  DB --> H((HALT))
-
+  MWR --> |NO| DBr[delete branch]
+  DBr --> H((HALT))
+  PC --> RT[run tests]
+  RT --> TSP{is test suite passing?}
+  TSP --> |YES| DB{is development branch?}
+  TSP --> |NO| MWR
+  DB --> |YES| DE[set enviromnent to development]
+  DB --> |NO| TB{is test branch?}
+  TB --> |YES| TE[set environment to test]
+  TB --> |NO| SE[set environment to stage]
+  DE --> HC{"is commit affecting helm chart(s)?"}
+  TE --> HC
+  SE ---> HC
+  HC --> |YES| PM[push to museum]
+  HC --> |NO| PH[pull current helm chart from museum]
+  PM --> PH
+  PH --> RC[run chart with selected environment]
+  RC --> KM[[KUBERNETES MAGIC]]
+  KM --> MM{is merge to main?}
+  MM --> |YES| H
+  MM --> |NO| CR[is commit ready for mergin to main?]
+  CR --> |YES| PR[create pull request for merge to main]
+  CR --> |NO| MWR
 ```
 
 - local coding
