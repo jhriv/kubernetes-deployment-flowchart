@@ -5,6 +5,7 @@ A flow chart outlining Kubernetes deployment for UCLA Library
 ```mermaid
 flowchart TD
   classDef terminator fill:#add8e6;
+  classDef github fill:#e4d96f;
   classDef magic fill:#B4CE5F;
   S((START)) --> LC("create / edit source code")
   class S terminator;
@@ -46,4 +47,5 @@ flowchart TD
   MPR --> PE[set environment to production]
   PRA --> |NO| MWR
   PE --> PH
+  class RT,TSP,DB,DE,TB,TE,SE,HC,PM,PH,MM,PE github;
 ```
