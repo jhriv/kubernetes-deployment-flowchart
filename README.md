@@ -8,7 +8,7 @@ flowchart TD
   CC --> LGH(run local git hoks)
   LGH --> GHP{do local git hooks pass?}
   GHP --> |YES| PC["push commit(s)"]
-  GHP --> |NO| MWR[is more work required?]
+  GHP --> |NO| MWR{is more work required?}
   MWR --> |YES| LC
   MWR --> |NO| DBr[delete branch]
   DBr --> H((HALT))
@@ -30,7 +30,7 @@ flowchart TD
   RC --> KM[[KUBERNETES MAGIC]]
   KM --> MM{is environment set to production?}
   MM --> |YES| H
-  MM --> |NO| CR[is commit ready for mergin to main?]
+  MM --> |NO| CR{is commit ready for mergin to main?}
   CR --> |YES| PR[create pull request for merge to main]
   CR --> |NO| MWR
   PR --> PRA{is pull request approved?}
