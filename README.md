@@ -2,6 +2,11 @@
 
 A flow chart outlining Kubernetes deployment for UCLA Library
 
+If you have a hard time reading the labels, please [set your theme](https://github.com/settings/profile) to [light mode](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-personal-account-settings/managing-your-theme-settings).
+
+
+
+
 ```mermaid
 flowchart TD
   S((START))
