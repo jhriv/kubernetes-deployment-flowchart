@@ -1,4 +1,4 @@
-# Kubernets Flowchart
+# Kubernetes Flowchart
 
 A flow chart outlining Kubernetes deployment for UCLA Library
 
@@ -12,6 +12,7 @@ flowchart TD
   MWR --> |YES| LC
   MWR --> |NO| DB[delete branch]
   DB --> H((HALT))
+
 ```
 
 - local coding
