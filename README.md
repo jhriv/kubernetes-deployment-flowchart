@@ -5,6 +5,8 @@ A flow chart outlining Kubernetes deployment for UCLA Library
 ```mermaid
 flowchart TD
   S((START)) --> LC(local coding)
+  style S fill:#add8e6
+  style H fill:#add8e6
   LC --> CC(code commit)
   CC --> GHE{is running local git hooks required?}
   GHE --> |YES| LGH(run local git hooks)
