@@ -7,8 +7,8 @@ flowchart TD
   LC(local coding) --> CC(code commit)
   CC --> LGH(local git hoks)
   LGH --> GHP{do local git hooks pass?}
-  GHP --> |YES| MWR[is more work required?]
-  GHP --> |NO| PC["push commit(s)"]
+  GHP --> |YES| PC["push commit(s)"]
+  GHP --> |NO| MWR[is more work required?]
   MWR --> |YES| LC
   MWR --> |NO| DBr[delete branch]
   DBr --> H((HALT))
