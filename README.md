@@ -5,7 +5,7 @@ A flow chart outlining Kubernetes deployment for UCLA Library
 ```mermaid
 flowchart TD
   classDef terminator fill:#add8e6;
-  classDef magic fill:#5FB3CE,color:#2F7F98;
+  classDef magic fill:#B4CE5F;
   S((START)) --> LC(local coding)
   class S terminator;
   LC --> CC(code commit)
