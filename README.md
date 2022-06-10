@@ -17,7 +17,7 @@ flowchart TD
   GHP --> |NO| MWR{is more work required?}
   MWR --> |YES| LC
   MWR --> |NO| DBr[delete branch]
-  DBr --> H((HALT))
+  DBr --> H((END))
   class H terminator;
   PC --> RT[run tests]
   RT --> TSP{is test suite passing?}
