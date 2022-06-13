@@ -21,6 +21,8 @@ flowchart TD
   DBr[delete branch]
   RT[run tests]
   TSP{is test suite passing?}
+  BI[build image]
+  PI[publish image]
   DB{is development branch?}
   DE[set enviromnent to development]
   TB{is test branch?}
@@ -54,7 +56,9 @@ flowchart TD
   DBr --> H
   PC --> RT
   RT --> TSP
-  TSP --> |YES| DB
+  TSP --> |YES| BI
+  BI --> PI
+  PI --> DB
   TSP --> |NO| MWR
   DB --> |YES| DE
   DB --> |NO| TB
@@ -85,5 +89,5 @@ flowchart TD
 
   class S,H terminator;
   class KM magic;
-  class RT,TSP,DB,DE,TB,TE,SE,HC,PM,PH,MM,PE github;
+  class RT,TSP,BI,PI,DB,DE,TB,TE,SE,HC,PM,PH,MM,PE github;
 ```
